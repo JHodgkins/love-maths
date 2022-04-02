@@ -19,29 +19,29 @@
     </h1>
     <div class="game-area">
         <div class="controls-area">
+            <button data-type="addition" class="btn btn--big btn--green">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button data-type="subtract" class="btn btn--big btn--blue">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button data-type="multiply" class="btn btn--big btn--orange">
+                <i class="fas fa-times"></i>
+            </button>
+            <button data-type="division" class="btn btn--big btn--red">
+                <i class="fas fa-divide"></i>
+            </button>
         </div>
-        <button class="btn btn--big btm--green">
-            <i class="fas fa-plus"></i>
-        </button>
-        <button class="btn btn--big btm--blue">
-            <i class="fas fa-minus"></i>
-        </button>
-        <button class="btn btn--big btm--orange">
-            <i class="fas fa-times"></i>
-        </button>
-        <button class="btn btn--big btm--red">
-            <i class="fas fa-divide"></i>
-        </button>
+        <div class="question-area">
+            <span id="operand1">0</span>
+            <span id="operator">x</span>
+            <span id="operand2">0</span>
+            <span>=</span>
+            <p class="answer-message">Answer message:</p>
+            <input type="number" id="answer-box">
+        </div>
+        <button data-type="submit" class="btn btn--gray">Submit answer</button>
     </div>
-    <div class="question-area">
-        <span id="operand1">0</span>
-        <span id="operator">x</span>
-        <span id="operand2">0</span>
-        <span>=</span>
-        <p class="answer-message">Answer message:</p>
-        <input type="number" id="answer-box">
-    </div>
-    <button class="btn btn--grey">Submit answer</button>
     <div class="score-area">
         <p class="scores">Correct answers <span id="score">0</span></p>
         <p class="scores">Incorrect answers <span id="incorrect">0</span></p>
