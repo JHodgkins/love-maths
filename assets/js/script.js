@@ -15,9 +15,14 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 });
-
+/**
+ * Main game "loop" run when the script is first loaded
+ * and after the user's answer has been processed.
+ */
 function runGame(){
-
+    // Generate 2 random numbers between 1 and 25
+    let num1 = Math.floor(Math.random() * 25) + 1;
+    let num2 = Math.floor(Math.random() * 25) + 1;
 }
 
 function checkAnswer(){
@@ -51,4 +56,3 @@ function displayMultiplyQuestion(){
 function displayDivisionQuestion(){
 
 }
-
