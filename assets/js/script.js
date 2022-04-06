@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', function(){
            }
         });
     }
+    document.getElementById('answer-box').addEventListener("keydown", function(event){
+        if(event.key === "Enter"){
+            checkAnswer();
+        }
+    })
+
     runGame('addition');
 });
 /**
@@ -21,9 +27,15 @@ document.addEventListener('DOMContentLoaded', function(){
  * and after the user's answer has been processed.
  */
 function runGame(gameType){
+    // Set focus on the answer-box each time and reset to a blank value for each users answer
+    document.getElementById('answer-box').value = "";
+    document.getElementById('answer-box').focus();
+
     // Generate 2 random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
+
+    // Check which game type is running
     if (gameType === 'addition') {
         displayAdditionQuestion(num1,num2);
     }else if (gameType === 'subtract') {
@@ -110,8 +122,9 @@ function displayMultiplyQuestion(operand1, operand2){
     document.getElementById('operator').textContent = 'x';
 }
 
-function displayDivisionQuestion(operand1, operand2){
-    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
-    document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
-    document.getElementById('operator').textContent = '/';
+function displayDivisionQuestion(operand1, operand2) {
+    operand1 = operand1 * operand2;
+    document.getElementById("operand1").textContent = operand1;
+	document.getElementById("operand2").textContent = operand2;
+	document.getElementById("operator").textContent = "/";
 }
