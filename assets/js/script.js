@@ -35,9 +35,21 @@ function runGame(gameType){
 function checkAnswer(){
 
 }
-
+/**
+ * Get the operands (numbers) and the operator (plus, minus, multiply, division)
+ * from the Dom directly to return the correct answer.
+ */
 function calculateCorrectAnswer(){
+    let operand1 = parseInt(document.getElementById('operand1').innerText);
+    let operand2 = parseInt(document.getElementById('operand2').innerText);
+    let operator = document.getElementById('operator').innerText;
 
+    if (operator === '+') {
+        return [operand1 + operand2, 'operator'];
+    } else {
+        alert(`Unimplimented operator: ${operator}`);
+        throw `Unimplimented operator: ${operator}.aborting`;
+    }
 }
 
 function incrementScore(){
