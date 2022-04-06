@@ -57,7 +57,7 @@ function calculateCorrectAnswer(){
     let operator = document.getElementById('operator').innerText;
 
     if (operator === '+') {
-        return [operand1 + operand2, 'operator'];
+        return [operand1 + operand2, 'addition'];
     } else {
         alert(`Unimplimented operator: ${operator}`);
         throw `Unimplimented operator: ${operator}.aborting`;
