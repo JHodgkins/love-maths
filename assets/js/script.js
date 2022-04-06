@@ -41,9 +41,11 @@ function checkAnswer(){
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
-        alert (`Well Document, You got the answer correct! :D`);
+        alert ("Well Document, You got the answer correct! :D");
+        incrementScore();
     } else {
-        alert (`Snaps, Thant's incorrect, You answered ${userAnswer}. - The correct answer was ${calculatedAnswer}`);
+        alert (`Snaps, Thant's incorrect, You answered ${userAnswer}. - The correct answer was ${calculatedAnswer[0]}`);
+        incrementWrongAnswer();
     }
     runGame(calculatedAnswer[1]);
 }
@@ -56,20 +58,26 @@ function calculateCorrectAnswer(){
     let operand2 = parseInt(document.getElementById('operand2').innerText);
     let operator = document.getElementById('operator').innerText;
 
-    if (operator === '+') {
-        return [operand1 + operand2, 'addition'];
+    if (operator === "+") {
+        return [operand1 + operand2, "addition"];
     } else {
-        alert(`Unimplimented operator: ${operator}`);
+        alert("Unimplimented operator: ${operator}");
         throw `Unimplimented operator: ${operator}.aborting`;
     }
 }
-
+/**
+ * Get the current score from the Dom and increment it
+ */
 function incrementScore(){
-
+    let oldScore = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score').innerText = ++oldScore;
 }
-
+/**
+ * Get the current score tally of incorrect answersfrom the Dom and increment when necessary
+ */
 function incrementWrongAnswer(){
-
+    let oldIncorrectScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText = ++oldIncorrectScore;
 }
 
 function displayAdditionQuestion(opperand1,opperand2){
